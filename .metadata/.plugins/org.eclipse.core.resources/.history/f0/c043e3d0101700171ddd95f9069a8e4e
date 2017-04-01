@@ -89,13 +89,11 @@ public class GuiMain  extends JFrame implements ActionListener {
 			StartStopButton.setLabel("Stop");
 			ISPField.setEditable(false);
 			AdvertisedDownloadSpeedField.setEditable(false);
-			waitField.setEditable(false);
 		}else
 		{
 			StartStopButton.setLabel("Start");
 			ISPField.setEditable(true);
 			AdvertisedDownloadSpeedField.setEditable(true);
-			waitField.setEditable(true);
 		}
 		
 	}

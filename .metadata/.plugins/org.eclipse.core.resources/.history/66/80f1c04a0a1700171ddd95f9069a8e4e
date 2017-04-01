@@ -1,0 +1,32 @@
+package net.sdc.ispattack;
+
+import java.awt.Button;
+import java.awt.FlowLayout;
+import java.awt.Frame;
+import java.awt.Label;
+import java.awt.TextField;
+import java.awt.event.ActionEvent;
+import java.awt.event.ActionListener;
+
+public class GuiMain  extends Frame implements ActionListener {
+
+	private Label ISPLabel, AdvertisedDownloadSpeedLabel, lastDownloadSpeedLabel;
+	private TextField ISPField, AdvertisedDownloadSpeedField, lastDownloadSpeedField;
+	private Button StartStopButton; 
+	
+	public GuiMain()
+	{
+		this.setLayout(new FlowLayout());
+		
+		ISPLabel = new Label("ISP Twitter Handle:");
+		this.add(ISPLabel);
+		
+	}
+
+	@Override
+	public void actionPerformed(ActionEvent e) {
+		// TODO Auto-generated method stub
+		
+	}
+	
+}

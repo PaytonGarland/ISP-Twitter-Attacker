@@ -20,10 +20,8 @@ public class GuiMain  extends JFrame implements ActionListener {
 	
 	private Label ISPLabel = new Label("ISP Twitter Handle:"), 
 			AdvertisedDownloadSpeedLabel = new Label("Advertised Download Mbps:"), 
-			lastDownloadSpeedLabel = new Label("Last Download Speed Test (Mbps):"),
-			waitLabel = new Label("Wait time between checks(Seconds):");
-	private TextField ISPField, AdvertisedDownloadSpeedField, lastDownloadSpeedField,
-			waitField;
+			lastDownloadSpeedLabel = new Label("Last Download Speed Test (Mbps):");
+	private TextField ISPField, AdvertisedDownloadSpeedField, lastDownloadSpeedField;
 	private Button StartStopButton; 
 	
 	private boolean running = false;
@@ -37,11 +35,6 @@ public class GuiMain  extends JFrame implements ActionListener {
 		
 		ISPField = new TextField(20);
 		this.add(ISPField);
-		
-		this.add(waitLabel);
-		
-		waitField = new TextField(10);
-		this.add(waitField);
 		
 		this.add(AdvertisedDownloadSpeedLabel);
 		
@@ -89,13 +82,11 @@ public class GuiMain  extends JFrame implements ActionListener {
 			StartStopButton.setLabel("Stop");
 			ISPField.setEditable(false);
 			AdvertisedDownloadSpeedField.setEditable(false);
-			waitField.setEditable(false);
 		}else
 		{
 			StartStopButton.setLabel("Start");
 			ISPField.setEditable(true);
 			AdvertisedDownloadSpeedField.setEditable(true);
-			waitField.setEditable(true);
 		}
 		
 	}

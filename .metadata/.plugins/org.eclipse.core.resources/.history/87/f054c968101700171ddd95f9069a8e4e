@@ -38,11 +38,6 @@ public class GuiMain  extends JFrame implements ActionListener {
 		ISPField = new TextField(20);
 		this.add(ISPField);
 		
-		this.add(waitLabel);
-		
-		waitField = new TextField(10);
-		this.add(waitField);
-		
 		this.add(AdvertisedDownloadSpeedLabel);
 		
 		AdvertisedDownloadSpeedField = new TextField(10);
@@ -89,13 +84,11 @@ public class GuiMain  extends JFrame implements ActionListener {
 			StartStopButton.setLabel("Stop");
 			ISPField.setEditable(false);
 			AdvertisedDownloadSpeedField.setEditable(false);
-			waitField.setEditable(false);
 		}else
 		{
 			StartStopButton.setLabel("Start");
 			ISPField.setEditable(true);
 			AdvertisedDownloadSpeedField.setEditable(true);
-			waitField.setEditable(true);
 		}
 		
 	}

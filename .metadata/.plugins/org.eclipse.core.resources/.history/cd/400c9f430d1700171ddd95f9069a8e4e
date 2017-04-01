@@ -6,24 +6,17 @@ import java.awt.Label;
 import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
+import java.awt.event.MouseEvent;
 import java.awt.event.MouseListener;
 
 import javax.swing.JFrame;
 
 public class GuiMain  extends JFrame implements ActionListener {
 
-	/**
-	 * 
-	 */
-	private static final long serialVersionUID = 1L;
-	
-	
 	private Label ISPLabel = new Label("ISP Twitter Handle:"), 
 			AdvertisedDownloadSpeedLabel = new Label("Advertised Download Mbps:"), 
-			lastDownloadSpeedLabel = new Label("Last Download Speed Test (Mbps):"),
-			waitLabel = new Label("Wait time between checks(Seconds):");
-	private TextField ISPField, AdvertisedDownloadSpeedField, lastDownloadSpeedField,
-			waitField;
+			lastDownloadSpeedLabel = new Label("Last Download Speed Test (Mbps):");
+	private TextField ISPField, AdvertisedDownloadSpeedField, lastDownloadSpeedField;
 	private Button StartStopButton; 
 	
 	private boolean running = false;
@@ -38,11 +31,6 @@ public class GuiMain  extends JFrame implements ActionListener {
 		ISPField = new TextField(20);
 		this.add(ISPField);
 		
-		this.add(waitLabel);
-		
-		waitField = new TextField(10);
-		this.add(waitField);
-		
 		this.add(AdvertisedDownloadSpeedLabel);
 		
 		AdvertisedDownloadSpeedField = new TextField(10);
@@ -51,12 +39,10 @@ public class GuiMain  extends JFrame implements ActionListener {
 		this.add(lastDownloadSpeedLabel);
 		
 		lastDownloadSpeedField = new TextField(10);
-		lastDownloadSpeedField.setEditable(false);
 		this.add(lastDownloadSpeedField);
 		
 		
-		
-		MouseListener lis = new StartStopListener(this);
+		MouseListener lis = new StartStopListener();
 		StartStopButton = new Button("Start");
 		StartStopButton.addMouseListener(lis);
 		this.add(StartStopButton);
@@ -83,21 +69,7 @@ public class GuiMain  extends JFrame implements ActionListener {
 	public void switchRunning()
 	{
 		running = !running;
-		
-		if(running)
-		{
-			StartStopButton.setLabel("Stop");
-			ISPField.setEditable(false);
-			AdvertisedDownloadSpeedField.setEditable(false);
-			waitField.setEditable(false);
-		}else
-		{
-			StartStopButton.setLabel("Start");
-			ISPField.setEditable(true);
-			AdvertisedDownloadSpeedField.setEditable(true);
-			waitField.setEditable(true);
-		}
-		
+		System.out.println(running);
 	}
 	
 	public boolean isRunning()

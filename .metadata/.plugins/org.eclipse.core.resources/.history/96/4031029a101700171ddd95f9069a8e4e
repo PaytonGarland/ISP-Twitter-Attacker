@@ -4,12 +4,12 @@ public class test {
 
 	public static void main(String[] args)
 	{
-		GuiMain mainThread = new GuiMain();	
+		new GuiMain();	
 		
-		while (1==1) {
-			
+		while (1==1)
+		{
+			System.out.println("test");
 		}
-		
 		//TwitterInterface inter = new TwitterInterface();
 		//System.out.println(inter.postTweet("Test"));
 	}
