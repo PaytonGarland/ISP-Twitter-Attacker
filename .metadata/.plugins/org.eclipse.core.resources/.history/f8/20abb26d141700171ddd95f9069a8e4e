@@ -16,7 +16,7 @@ public class StartStopListener implements MouseListener{
 	public void mouseClicked(MouseEvent e) {
 		
 		thread.switchRunning();
-		
+		new TestingThread(master);
 		
 	}
 

@@ -17,7 +17,6 @@ public class StartStopListener implements MouseListener{
 		
 		thread.switchRunning();
 		
-		
 	}
 
 	@Override

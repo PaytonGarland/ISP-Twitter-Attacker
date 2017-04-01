@@ -7,7 +7,6 @@ import java.awt.TextField;
 import java.awt.event.ActionEvent;
 import java.awt.event.ActionListener;
 import java.awt.event.MouseListener;
-import java.util.Timer;
 
 import javax.swing.JFrame;
 
@@ -18,7 +17,7 @@ public class GuiMain  extends JFrame implements ActionListener {
 	 */
 	private static final long serialVersionUID = 1L;
 	
-	private Timer timer = new Timer();
+	
 	private Label ISPLabel = new Label("ISP Twitter Handle:"), 
 			AdvertisedDownloadSpeedLabel = new Label("Advertised Download(Mbps):"), 
 			lastDownloadSpeedLabel = new Label("Last Download Speed Test (Mbps):"),
@@ -75,8 +74,6 @@ public class GuiMain  extends JFrame implements ActionListener {
 	{
 		return Double.parseDouble(waitField.getText()) * 60000;
 	}
-	
-	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -94,18 +91,12 @@ public class GuiMain  extends JFrame implements ActionListener {
 			ISPField.setEditable(false);
 			AdvertisedDownloadSpeedField.setEditable(false);
 			waitField.setEditable(false);
-
-			
-			timer.schedule(new TestingThread(this), 0, (long) getWaitTime());
-			
 		}else
 		{
 			StartStopButton.setLabel("Start");
 			ISPField.setEditable(true);
 			AdvertisedDownloadSpeedField.setEditable(true);
 			waitField.setEditable(true);
-			
-			timer.cancel();
 		}
 		
 	}
