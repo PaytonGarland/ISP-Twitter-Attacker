@@ -95,7 +95,7 @@ public class GuiMain  extends JFrame implements ActionListener {
 			AdvertisedDownloadSpeedField.setEditable(false);
 			waitField.setEditable(false);
 
-			timer = new Timer();
+			
 			timer.schedule(new TestingThread(this), 0, (long) getWaitTime());
 			
 		}else
