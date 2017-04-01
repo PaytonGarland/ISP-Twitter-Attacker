@@ -19,9 +19,9 @@ public class GuiMain  extends JFrame implements ActionListener {
 	
 	
 	private Label ISPLabel = new Label("ISP Twitter Handle:"), 
-			AdvertisedDownloadSpeedLabel = new Label("Advertised Download(Mbps):"), 
+			AdvertisedDownloadSpeedLabel = new Label("Advertised Download Mbps:"), 
 			lastDownloadSpeedLabel = new Label("Last Download Speed Test (Mbps):"),
-			waitLabel = new Label("Wait time between checks(Minutes):");
+			waitLabel = new Label("Wait time between checks(Seconds):");
 	private TextField ISPField, AdvertisedDownloadSpeedField, lastDownloadSpeedField,
 			waitField;
 	private Button StartStopButton; 
@@ -54,6 +54,8 @@ public class GuiMain  extends JFrame implements ActionListener {
 		lastDownloadSpeedField.setEditable(false);
 		this.add(lastDownloadSpeedField);
 		
+		
+		
 		MouseListener lis = new StartStopListener(this);
 		StartStopButton = new Button("Start");
 		StartStopButton.addMouseListener(lis);
@@ -73,6 +75,8 @@ public class GuiMain  extends JFrame implements ActionListener {
 	@Override
 	public void actionPerformed(ActionEvent e) {
 		// TODO Auto-generated method stub
+		
+		
 		
 	}
 	
@@ -95,6 +99,8 @@ public class GuiMain  extends JFrame implements ActionListener {
 		}
 		
 	}
+	
+	
 	
 	public boolean isRunning()
 	{

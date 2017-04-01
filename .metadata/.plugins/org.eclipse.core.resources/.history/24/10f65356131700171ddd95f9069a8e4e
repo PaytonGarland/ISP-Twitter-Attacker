@@ -1,0 +1,13 @@
+package net.sdc.ispattack;
+
+public class TestingThread {
+
+	private GuiMain master;
+	
+	public TestingThread(GuiMain master)
+	{
+		this.master = master;
+	}
+	
+	
+}
