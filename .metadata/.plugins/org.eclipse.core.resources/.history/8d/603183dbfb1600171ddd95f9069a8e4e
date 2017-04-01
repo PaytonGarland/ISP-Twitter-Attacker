@@ -53,9 +53,12 @@ public class TwitterInterface {
 			scan.close();
 			
 		} catch (FileNotFoundException e) {
-			System.out.println(e);
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		
+		finally
+		{
+		}
 		
 	}
 	

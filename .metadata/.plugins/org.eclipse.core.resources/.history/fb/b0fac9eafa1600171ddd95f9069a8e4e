@@ -24,22 +24,16 @@ public class TwitterInterface {
 	private AccessToken accessToken;
 	private TwitterFactory factory = null;
 	
-	public TwitterInterface(String file)
+	public TwitterInterface()
 	{
-		setConfiguration(file);
+		setConfiguration();
 		twitter = factory.getInstance();
 		setAccessToken();
 	}
 	
-	public TwitterInterface()
-	{
-		this(".\\conf.txt");
-	}
-	
-	public void setConfiguration(String file)
+	public void setConfiguration(File inputFile)
 	{
 		try {
-			File inputFile = new File(file);
 			FileInputStream io = new FileInputStream(inputFile);
 			Scanner scan = new Scanner(io);
 			
@@ -50,12 +44,11 @@ public class TwitterInterface {
 			  .setOAuthAccessToken(scan.nextLine())
 			  .setOAuthAccessTokenSecret(scan.nextLine());
 			factory = new TwitterFactory(cb.build());
-			scan.close();
 			
 		} catch (FileNotFoundException e) {
-			System.out.println(e);
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		
 		
 	}
 	

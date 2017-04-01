@@ -50,12 +50,11 @@ public class TwitterInterface {
 			  .setOAuthAccessToken(scan.nextLine())
 			  .setOAuthAccessTokenSecret(scan.nextLine());
 			factory = new TwitterFactory(cb.build());
-			scan.close();
 			
 		} catch (FileNotFoundException e) {
-			System.out.println(e);
+			// TODO Auto-generated catch block
+			e.printStackTrace();
 		}
-		
 		
 	}
 	

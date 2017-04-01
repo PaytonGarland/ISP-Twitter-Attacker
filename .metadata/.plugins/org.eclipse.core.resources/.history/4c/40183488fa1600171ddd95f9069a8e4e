@@ -9,14 +9,8 @@ import twitter4j.auth.RequestToken;
 import twitter4j.conf.ConfigurationBuilder;
 
 import java.io.BufferedReader;
-import java.io.File;
-import java.io.FileInputStream;
-import java.io.FileNotFoundException;
-import java.io.FileReader;
 import java.io.IOException;
-import java.io.InputStream;
 import java.io.InputStreamReader;
-import java.util.Scanner;
 
 public class TwitterInterface {
 
@@ -24,39 +18,22 @@ public class TwitterInterface {
 	private AccessToken accessToken;
 	private TwitterFactory factory = null;
 	
-	public TwitterInterface(String file)
+	public TwitterInterface()
 	{
-		setConfiguration(file);
+		setConfiguration();
 		twitter = factory.getInstance();
 		setAccessToken();
 	}
 	
-	public TwitterInterface()
+	public void setConfiguration()
 	{
-		this(".\\conf.txt");
-	}
-	
-	public void setConfiguration(String file)
-	{
-		try {
-			File inputFile = new File(file);
-			FileInputStream io = new FileInputStream(inputFile);
-			Scanner scan = new Scanner(io);
-			
-			ConfigurationBuilder cb = new ConfigurationBuilder();
-			cb.setDebugEnabled(true)
-			  .setOAuthConsumerKey(scan.nextLine())
-			  .setOAuthConsumerSecret(scan.nextLine())
-			  .setOAuthAccessToken(scan.nextLine())
-			  .setOAuthAccessTokenSecret(scan.nextLine());
-			factory = new TwitterFactory(cb.build());
-			scan.close();
-			
-		} catch (FileNotFoundException e) {
-			System.out.println(e);
-		}
-		
-		
+		ConfigurationBuilder cb = new ConfigurationBuilder();
+		cb.setDebugEnabled(true)
+		  .setOAuthConsumerKey("QPZyyoeY6oZGIJq7gCfQMHDGV")
+		  .setOAuthConsumerSecret("mJZraMpir22lCWH8FjzQ9e4txDy4PxW3It7PpGoj4ieuabgY6v")
+		  .setOAuthAccessToken("842163484800487424-5Lh0PZhZUHyCB0mqJjyZBNBuw3or9uM")
+		  .setOAuthAccessTokenSecret("942jPyBO8c0Q4aduzqoMZ3hPMsPRlaWRXx3Xe5bdcxJks");
+		factory = new TwitterFactory(cb.build());
 	}
 	
 	public void setAccessToken()
