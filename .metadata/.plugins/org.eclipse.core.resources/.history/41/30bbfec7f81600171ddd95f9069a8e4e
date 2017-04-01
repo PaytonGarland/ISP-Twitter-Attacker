@@ -16,12 +16,10 @@ public class TwitterInterface {
 
 	private Twitter twitter;
 	private AccessToken accessToken;
-	private TwitterFactory factory = null;
 	
 	public TwitterInterface()
 	{
-		setConfiguration();
-		twitter = factory.getInstance();
+		twitter = new TwitterFactory().getInstance();
 		setAccessToken();
 	}
 	
@@ -33,7 +31,7 @@ public class TwitterInterface {
 		  .setOAuthConsumerSecret("mJZraMpir22lCWH8FjzQ9e4txDy4PxW3It7PpGoj4ieuabgY6v")
 		  .setOAuthAccessToken("842163484800487424-5Lh0PZhZUHyCB0mqJjyZBNBuw3or9uM")
 		  .setOAuthAccessTokenSecret("942jPyBO8c0Q4aduzqoMZ3hPMsPRlaWRXx3Xe5bdcxJks");
-		factory = new TwitterFactory(cb.build());
+		TwitterFactory tf = new TwitterFactory(cb.build());
 	}
 	
 	public void setAccessToken()
