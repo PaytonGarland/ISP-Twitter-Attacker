@@ -3,5 +3,6 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry exported="true" kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.8"/>
 	<classpathentry kind="lib" path="C:/Users/trizm/Documents/R-Sync/Dropbox/School/SDC 2017/twitter4j-4.0.4/lib/twitter4j-core-4.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/trizm/Documents/R-Sync/Dropbox/School/SDC 2017/ISP-Twitter-Attacker/ISPAttacker/speedtest-1.08.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

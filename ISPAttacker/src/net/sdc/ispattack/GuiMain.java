@@ -84,12 +84,30 @@ public class GuiMain  extends JFrame implements ActionListener {
 		
 	}
 	
-	public void switchRunning()
+	public void validateLL() throws IllegalArgumentException
 	{
+		String isp = ISPField.getText();
+		if(!isp.startsWith("@")) throw new IllegalArgumentException("Invalid twitter handle format");
+		if(isp.trim().isEmpty()) throw new IllegalArgumentException("Twitter handle is empty");
+		try {
+			Integer.parseInt(waitField.getText());
+			Double.parseDouble(AdvertisedDownloadSpeedField.getText());
+		}
+		catch (Exception e)
+		{
+			throw new IllegalArgumentException("Wait time or Download speed is not a valid number.");
+		}
+	}
+	
+	public void switchRunning() throws IllegalArgumentException
+	{
+		validateLL();
+		
 		running = !running;
 		
 		if(running)
 		{
+			
 			StartStopButton.setLabel("Stop");
 			ISPField.setEditable(false);
 			AdvertisedDownloadSpeedField.setEditable(false);
