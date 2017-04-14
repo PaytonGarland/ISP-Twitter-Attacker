@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<launchConfiguration type="com.genuitec.eclipse.javascript.debug.core.jsStandaloneAppLaunchConfigurationType">
+<stringAttribute key="jsAppLaunchingDelegateId" value="com.genuitec.eclipse.javascript.debug.nodejs.standalone"/>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_PATHS">
+<listEntry value="/ISPAttacker/src/net/sdc/ispattack/wmiQuery.js"/>
+</listAttribute>
+<listAttribute key="org.eclipse.debug.core.MAPPED_RESOURCE_TYPES">
+<listEntry value="1"/>
+</listAttribute>
+</launchConfiguration>

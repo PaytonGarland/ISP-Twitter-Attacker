@@ -1,0 +1,10 @@
+var loc = new ActiveXObject("WbemScripting.SWbemLocator");
+var svc = loc.ConnectServer(".", "root\\cimv2");
+coll = svc.ExecQuery("select CurrentBandwidth from Win32_PerfFormattedData_Tcpip_NetworkInterface");
+var items = new Enumerator(coll);
+
+while (!items.atEnd())
+{
+    WScript.Echo(items.item().Name);
+    items.moveNext();
+}

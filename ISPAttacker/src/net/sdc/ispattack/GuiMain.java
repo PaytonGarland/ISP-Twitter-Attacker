@@ -75,8 +75,6 @@ public class GuiMain  extends JFrame implements ActionListener {
 	{
 		return Double.parseDouble(waitField.getText()) * 60000;
 	}
-	
-	
 
 	@Override
 	public void actionPerformed(ActionEvent e) {
@@ -90,7 +88,7 @@ public class GuiMain  extends JFrame implements ActionListener {
 		if(!isp.startsWith("@")) throw new IllegalArgumentException("Invalid twitter handle format");
 		if(isp.trim().isEmpty()) throw new IllegalArgumentException("Twitter handle is empty");
 		try {
-			Integer.parseInt(waitField.getText());
+			Double.parseDouble(waitField.getText());
 			Double.parseDouble(AdvertisedDownloadSpeedField.getText());
 		}
 		catch (Exception e)
@@ -126,6 +124,24 @@ public class GuiMain  extends JFrame implements ActionListener {
 			timer.cancel();
 		}
 		
+	}
+	
+	public boolean isNearAdvertisedDownload(double speed)
+	{
+		double ad = Double.parseDouble(AdvertisedDownloadSpeedField.getText());
+		ad = ad * .90;
+		
+		return speed >= ad;
+	}
+	
+	public String getHandle()
+	{
+		return ISPField.getText();
+	}
+	
+	public void setRecentDownload(double speed)
+	{
+		lastDownloadSpeedField.setText(speed + "");
 	}
 	
 	public boolean isRunning()
